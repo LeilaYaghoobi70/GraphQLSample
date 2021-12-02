@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="edge"
+            type="com.example.graphqlsample.domain.model.Repository" />
+
+        <import type="com.example.graphqlsample.persenter.utils.Constant" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="12dp"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_idTitle"
+                style="@style/style_textView_title"
+                android:layout_gravity="start"
+                android:text="@string/string_profileFragment_id"
+                app:layout_constraintBottom_toTopOf="@+id/textView_repositoriesFragment_nameTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_id"
+                style="@style/style_textView_description"
+                android:layout_gravity="start"
+                android:text="@{edge.id}"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_repositoriesFragment_idTitle"
+                app:layout_constraintStart_toEndOf="@+id/textView_repositoriesFragment_idTitle"
+                app:layout_constraintTop_toTopOf="@+id/textView_repositoriesFragment_idTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_nameTitle"
+                style="@style/style_textView_title"
+                android:layout_gravity="start"
+                android:text="@string/string_profileFragment_name"
+                app:layout_constraintBottom_toTopOf="@+id/textView_repositoriesFragment_createAtTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_repositoriesFragment_idTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_name"
+                style="@style/style_textView_description"
+                android:layout_gravity="start"
+                android:text="@{edge.name ==  null || edge.name == Constant.EMPTY_STRING ? `------` : edge.name}"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_repositoriesFragment_nameTitle"
+                app:layout_constraintStart_toEndOf="@+id/textView_repositoriesFragment_nameTitle"
+                app:layout_constraintTop_toTopOf="@+id/textView_repositoriesFragment_nameTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_createAtTitle"
+                style="@style/style_textView_title"
+                android:layout_gravity="start"
+                android:text="@string/string_profileFragment_createAt"
+                app:layout_constraintBottom_toTopOf="@+id/textView_repositoriesFragment_descriptionTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_repositoriesFragment_nameTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_createAt"
+                style="@style/style_textView_description"
+                android:layout_gravity="start"
+                android:text="@{edge.createdAt == null || edge.createdAt ==  Constant.EMPTY_STRING ? `------` : edge.createdAt }"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_repositoriesFragment_createAtTitle"
+                app:layout_constraintStart_toEndOf="@+id/textView_repositoriesFragment_createAtTitle"
+                app:layout_constraintTop_toTopOf="@+id/textView_repositoriesFragment_createAtTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_descriptionTitle"
+                style="@style/style_textView_title"
+                android:layout_gravity="start"
+                android:layout_marginBottom="12dp"
+                android:text="@string/string_profileFragment_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_repositoriesFragment_createAtTitle" />
+
+            <TextView
+                android:id="@+id/textView_repositoriesFragment_description"
+                style="@style/style_textView_description"
+                android:layout_gravity="start"
+                android:text="@{edge.description == null ||edge.description ==  Constant.EMPTY_STRING? `------` : edge.description  }"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_repositoriesFragment_descriptionTitle"
+                app:layout_constraintStart_toEndOf="@+id/textView_repositoriesFragment_descriptionTitle"
+                app:layout_constraintTop_toTopOf="@+id/textView_repositoriesFragment_descriptionTitle" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GraphQLSample</string>
+
+    <!--repositoriesFragment -->
+    <string name="string_repositoriesFragment_repositories">Repositories</string>
+
+    <!-- profileFragment-->
+    <string name="string_profileFragment_profile">Profile</string>
+    <string name="string_profileFragment_githubAddress">Github address : </string>
+    <string name="string_profileFragment_username">UserName : </string>
+    <string name="string_profileFragment_createAt">CreateAt : </string>
+    <string name="string_profileFragment_id">ID : </string>
+    <string name="string_profileFragment_name">Name : </string>
+    <string name="string_profileFragment_description">Description : </string>
+
+</resources>

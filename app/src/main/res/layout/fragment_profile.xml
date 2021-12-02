@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="profile"
+            type="com.example.graphqlsample.domain.model.Profile" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_profileFragment_profile"
+            style="@style/style_imageView"
+            android:layout_height="300dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_usernameTitle"
+            style="@style/style_textView_title"
+            android:layout_gravity="start"
+            app:layout_constraintBottom_toTopOf="@+id/textView_profileFragment_githubAddressTitle"
+            android:text="@string/string_profileFragment_username"
+            app:layout_constraintStart_toStartOf="@+id/imageView_profileFragment_profile"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_profileFragment_profile" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_username"
+            style="@style/style_textView_description"
+            android:layout_gravity="start"
+            android:text="@{profile.login}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_profileFragment_usernameTitle"
+            app:layout_constraintStart_toEndOf="@+id/textView_profileFragment_usernameTitle"
+            app:layout_constraintTop_toTopOf="@+id/textView_profileFragment_usernameTitle" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_githubAddressTitle"
+            style="@style/style_textView_title"
+            android:layout_gravity="start"
+            app:layout_constraintBottom_toTopOf="@+id/textView_profileFragment_createAtTile"
+            android:text="@string/string_profileFragment_githubAddress"
+            app:layout_constraintStart_toStartOf="@+id/imageView_profileFragment_profile"
+            app:layout_constraintTop_toBottomOf="@+id/textView_profileFragment_usernameTitle" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_githubAddress"
+            style="@style/style_textView_description"
+            android:layout_gravity="start"
+            android:text="@{profile.url}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_profileFragment_githubAddressTitle"
+            app:layout_constraintStart_toEndOf="@+id/textView_profileFragment_githubAddressTitle"
+            app:layout_constraintTop_toTopOf="@+id/textView_profileFragment_githubAddressTitle" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_createAtTile"
+            style="@style/style_textView_title"
+            android:layout_gravity="start"
+            android:text="@string/string_profileFragment_createAt"
+            app:layout_constraintStart_toStartOf="@+id/imageView_profileFragment_profile"
+            app:layout_constraintTop_toBottomOf="@+id/textView_profileFragment_githubAddressTitle" />
+
+        <TextView
+            android:id="@+id/textView_profileFragment_createAt"
+            style="@style/style_textView_description"
+            android:layout_gravity="start"
+            android:text="@{profile.createdAt}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_profileFragment_createAtTile"
+            app:layout_constraintStart_toEndOf="@+id/textView_profileFragment_createAtTile"
+            app:layout_constraintTop_toTopOf="@+id/textView_profileFragment_createAtTile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
